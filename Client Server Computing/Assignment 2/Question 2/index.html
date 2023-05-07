@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>WELCOME TO SHAPE CALCULATOR</title>
+ <style>
+ input{
+ margin-top:20px;
+ }
+ </style>
+ </head>
+ <body>
+ <div>
+ <p>
+ Choose Operation: <br>
+ A: Surface Area of the Box <br>
+ B: Volume of the Box <br>
+ C: Surface Area of the Sphere <br>
+ D: Volume of the Sphere<br>
+ </p>
+ <br>
+
+ <form action="calculator">
+ <label for="option">Operation:</label>
+ <select id="option" name="option">
+ <option value="" disabled selected hidden>Click me</option>
+ <option value="A">A</option>
+ <option value="B">B</option>
+ <option value="C">C</option>
+ <option value="D">D</option>
+ </select>
+ <label for="height">Height:</label>
+ <input type="text" id="height" name="height">
+ <label for="width">Width: </label>
+ <input type="text" id="width" name="width">
+ <label for="length">Length: </label>
+ <input type="text" id="length" name="length">
+ <label for="radius">Radius:</label>
+ <input type="text" id="radius" name="radius">
+ <input type="submit" value="CALCULATE">
+ </form>
+ </div>
+ </body>
+CCS20903 CLIENT SERVER COMPUTING
+10
+</html>

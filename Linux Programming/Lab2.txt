@@ -1,0 +1,73 @@
+Question 1
+Write a Linux shell script to perform the following tasks in a given 
+directory using “for” loop: 
+
+
+Code:
+
+echo "A – Change all files with .sh extension to executable for all 
+users"
+echo "B – Move these *.sh files to another directory" 
+echo "C – Execute each of these .sh files"
+echo
+read -p "Enter your option: " option
+echo
+if [[ "$option" == "A" ]];
+ then
+ for name in *.sh;
+ do
+ 
+ chmod +x $name
+ done
+elif [[ "$option" == "B" ]];
+ then
+ read -p "Enter directory to move .sh files: " directname
+ for name in *.sh;
+ do
+ 
+ mv $name $directname
+ 
+ done
+elif [[ "$option" == "C" ]];
+ then
+ for name in *.sh;
+ do
+ 
+ sh $name
+ 
+ done
+ 
+fi
+
+
+Question 2
+Write a Linux shell script that performs the following tasks: 
+	a. Provide a mystery integer between 1 to 10. 
+	b. Using “while” loop, allow the user to guess the random number until the user got it right. 
+	c. If the user’s entered number is lower or greater than the random number, notify the user to guess higher or lower respectively. 
+	d. If the user enters any number out of the 1 to 10 range, notify the user to enter in the correct number range. 
+	e. Display a congratulatory message along with the random number if the user guessed it correctly. 
+
+Code:
+
+guess=0
+random=0
+random=$(($(($RANDOM%10))+1))
+while [[ $guess -ne $random ]];
+do
+read -p "Guess the Number until you get right: " guess
+if [[ $guess -gt 10 || $guess -lt 0 ]];
+then
+ echo "guess not within the range"
+ 
+elif [[ $guess -gt $random ]];
+then
+ echo "guess lesser"
+ 
+elif [[ $guess -lt $random ]];
+then
+ echo "guess bigger"
+ 
+fi
+done 
+echo "CONGRATULATION! You Guessed the Number"

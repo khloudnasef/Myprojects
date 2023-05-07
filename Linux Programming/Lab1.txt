@@ -1,0 +1,54 @@
+Question 2
+A – Delete a file in current directory
+B – Create a directory in current directory.
+C – Change a file access mode to 755.
+D – Rename a file to another name
+E– Copy a file to another directory.
+
+
+Script: -
+
+#!/bin/bash
+echo A – Delete a file in current directory
+echo B – Create a directory in current directory.
+echo C – Change a file access mode to 755.
+echo D – Rename a file to another name
+echo E – Copy a file to another directory.
+echo
+read -p "Enter your option: " option
+echo
+if [[ "$option" == *A* ]]
+ then
+ read -p "File chosen to delete: " filename
+ rm $filename
+ echo "File has been deleted"
+ 
+elif [[ "$option" == *B* ]]
+ then
+ read -p "Enter new directory: " direct
+ 
+ mkdir $direct
+9
+ echo "new directory has been created"
+ 
+elif [[ "$option" == *C* ]]
+ then
+ read -p "Enter file to Change file mode: " filename
+ 
+ chmod 755 $filename
+ echo "File mode has been changed"
+elif [[ "$option" == *D* ]]
+ then
+ read -p "Enter filename to rename: " filename
+ read -p "Enter new file name:" newfilename
+ 
+ mv $filename $newfilename
+ echo "File has been renamed"
+elif [[ "$option" == *E* ]]
+ then
+ read -p "Enter file copy to another directory : " filename
+ 
+ read -p "Enter name of new directory: " directfile
+ cp $filename "./$directfile" 
+ echo "File has been copied to another directory"
+fi
